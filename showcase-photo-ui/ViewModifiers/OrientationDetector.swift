@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// A `ViewModifier` for detecting orientation changes of the device
 struct OrientationDetector: ViewModifier {
 
   @Binding var orientation: UIDeviceOrientation
@@ -20,6 +21,11 @@ struct OrientationDetector: ViewModifier {
 }
 
 extension View {
+
+  /// Detects orientation changes of the device and stores the detected, new
+  /// orientation into the given `Binding`
+  /// - Parameter orientation: `Binding` for the detected, new orientation
+  /// - Returns: A copy of this `View`, modified to detect orientation changes
   func detectOrientation(_ orientation: Binding<UIDeviceOrientation>) -> some View {
     modifier(OrientationDetector(orientation: orientation))
   }
