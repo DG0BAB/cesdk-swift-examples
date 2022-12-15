@@ -1,5 +1,6 @@
-import ApparelUI
 import SwiftUI
+import ApparelUI
+import PhotoUI
 
 private struct Section<Content: View>: View {
   let title: String
@@ -52,6 +53,11 @@ struct ContentView: View {
             view: ApparelUI.ContentView(),
             title: "Apparel UI",
             subtitle: "Customize and export a print-ready design with a mobile apparel editor."
+          )
+          Showcase(
+            view: PhotoUI.ContentView(),
+            title: "Photo UI",
+            subtitle: "Revolutionary Photo Editor."
           )
         }
       }
