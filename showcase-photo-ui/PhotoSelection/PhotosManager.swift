@@ -21,7 +21,7 @@ class PhotosManager {
     let image: UIImage
   }
 
-  /// Default instance of the `AvailablePhotosManager`.
+  /// Default instance of the `PhotosManager`.
   /// All photos available for editing will be loaded on first access.
   static let `default`: PhotosManager = {
     guard let photosURL = PhotoUI.bundle.resourceURL?.appending(path: "Photos", directoryHint: .isDirectory),
