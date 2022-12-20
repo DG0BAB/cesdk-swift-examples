@@ -1,10 +1,3 @@
-//
-//  PhotosManager.swift
-//  Showcase-PhotoUI
-//
-//  Created by Joachim Deelen on 14.12.22.
-//
-
 import Foundation
 import class UIKit.UIImage
 
@@ -19,7 +12,6 @@ class PhotosManager {
   struct Photo: Identifiable {
     let id: String
     let url: URL
-    let image: UIImage
   }
 
   /// Default instance of the `PhotosManager`.
@@ -29,11 +21,7 @@ class PhotosManager {
           let entries = try? FileManager.default.contentsOfDirectory(at: photosURL, includingPropertiesForKeys: nil) else {
       return PhotosManager(photos: [])
     }
-    return PhotosManager(photos: entries.compactMap { url in
-      guard let imageData = try? Data(contentsOf: url),
-      let image = UIImage(data: imageData) else { return nil }
-      return Photo(id: url.lastPathComponent, url: url, image: image)
-    })
+    return PhotosManager(photos: entries.map { Photo(id: $0.lastPathComponent, url: $0) })
   }()
 
   private init(photos: [Photo]) {
