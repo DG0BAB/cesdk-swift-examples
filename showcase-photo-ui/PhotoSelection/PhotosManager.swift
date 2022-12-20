@@ -18,6 +18,7 @@ class PhotosManager {
   /// A single `Photo` for use by the CESDK PhotoEditor
   struct Photo: Identifiable {
     let id: String
+    let url: URL
     let image: UIImage
   }
 
@@ -31,7 +32,7 @@ class PhotosManager {
     return PhotosManager(photos: entries.compactMap { url in
       guard let imageData = try? Data(contentsOf: url),
       let image = UIImage(data: imageData) else { return nil }
-      return Photo(id: url.lastPathComponent, image: image )
+      return Photo(id: url.lastPathComponent, url: url, image: image)
     })
   }()
 
