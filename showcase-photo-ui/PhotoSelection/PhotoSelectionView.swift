@@ -1,10 +1,3 @@
-//
-//  PhotoSelectionView.swift
-//  Showcase-PhotoUI
-//
-//  Created by Joachim Deelen on 15.12.22.
-//
-
 import SwiftUI
 
 /// Presents a list of `Photo`s from which one can be selected by the user
@@ -30,12 +23,18 @@ struct PhotoSelectionView: View {
     ScrollView(orientation.isLandscape ? .horizontal : .vertical) {
       LazyVGrid(columns: [GridItem(.adaptive(minimum: 220, maximum: 240))]) {
         ForEach(photos, content: { photo in
-          Image(uiImage: photo.image)
-            .resizable()
-            .aspectRatio(nil, contentMode: .fit)
-            .onTapGesture {
-              selection = photo
-            }
+          AsyncImage(url: photo.url) { image in
+            image
+              .resizable()
+              .aspectRatio(nil, contentMode: .fit)
+              .onTapGesture {
+                selection = photo
+              }
+          } placeholder: {
+            ProgressView()
+              .frame(maxWidth: .infinity, maxHeight: .infinity)
+              .aspectRatio(1, contentMode: .fit)
+          }
         })
       }
     }
