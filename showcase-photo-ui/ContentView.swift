@@ -7,7 +7,6 @@ import SwiftUI
 /// When editing ends, the list of available `Photo`s is presented again
 public struct ContentView: View {
 
-  @State private var orientation = UIDevice.current.orientation
   @State private var selection: PhotosManager.Photo? = nil
 
   public init() {}
