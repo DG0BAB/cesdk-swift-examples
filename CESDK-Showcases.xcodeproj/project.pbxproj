@@ -66,6 +66,9 @@
 		7902EA442949605E00A68435 /* PhotoUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 799FBD28294946E70069264A /* PhotoUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7951568D29495B6A00F66B50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883A1BACB3CBA8F48F31C067 /* ContentView.swift */; };
 		7951568E29495B7500F66B50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F865F27FA2F6B907528102 /* ContentView.swift */; };
+		79798981294F5D3800BAC485 /* BottomToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79798980294F5D3800BAC485 /* BottomToolbarView.swift */; };
+		797989842950B80E00BAC485 /* NumberDialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797989832950B80E00BAC485 /* NumberDialView.swift */; };
+		797989862950C09F00BAC485 /* Dials.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 797989852950C09F00BAC485 /* Dials.xcassets */; };
 		799FBD20294946E70069264A /* IMGLYEngine in Frameworks */ = {isa = PBXBuildFile; productRef = 799FBCC9294946E70069264A /* IMGLYEngine */; };
 		79E9EF40294B45100074133D /* PhotoEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E9EF3E294B44A90074133D /* PhotoEditorView.swift */; };
 		79FD7C16294A0002005947F9 /* PhotosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FD7C15294A0002005947F9 /* PhotosManager.swift */; };
@@ -213,6 +216,9 @@
 		66F63C3D5A7677083A8F713C /* SheetGeometryKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetGeometryKey.swift; sourceTree = "<group>"; };
 		69FC91BE8AE22A4802EEE13B /* LoadSceneFromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadSceneFromString.swift; sourceTree = "<group>"; };
 		6DF1F7C07B4D8C86E3E72D48 /* PrimitiveButtonStyle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrimitiveButtonStyle+.swift"; sourceTree = "<group>"; };
+		79798980294F5D3800BAC485 /* BottomToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomToolbarView.swift; sourceTree = "<group>"; };
+		797989832950B80E00BAC485 /* NumberDialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberDialView.swift; sourceTree = "<group>"; };
+		797989852950C09F00BAC485 /* Dials.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Dials.xcassets; sourceTree = "<group>"; };
 		799FBCC6294946360069264A /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		799FBD28294946E70069264A /* PhotoUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhotoUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E9EF3E294B44A90074133D /* PhotoEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorView.swift; sourceTree = "<group>"; };
@@ -544,6 +550,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		7979897F294F5CEE00BAC485 /* Bars */ = {
+			isa = PBXGroup;
+			children = (
+				79798980294F5D3800BAC485 /* BottomToolbarView.swift */,
+			);
+			path = Bars;
+			sourceTree = "<group>";
+		};
+		797989822950B7CD00BAC485 /* Dials */ = {
+			isa = PBXGroup;
+			children = (
+				797989852950C09F00BAC485 /* Dials.xcassets */,
+				797989832950B80E00BAC485 /* NumberDialView.swift */,
+			);
+			path = Dials;
+			sourceTree = "<group>";
+		};
 		799FBCC4294946050069264A /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -574,6 +597,8 @@
 		79E9EF3D294B446A0074133D /* PhotoEditor */ = {
 			isa = PBXGroup;
 			children = (
+				797989822950B7CD00BAC485 /* Dials */,
+				7979897F294F5CEE00BAC485 /* Bars */,
 				79E9EF3E294B44A90074133D /* PhotoEditorView.swift */,
 			);
 			path = PhotoEditor;
@@ -979,6 +1004,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79FD7C2F294A99B1005947F9 /* Photos in Resources */,
+				797989862950C09F00BAC485 /* Dials.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1094,6 +1120,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79798981294F5D3800BAC485 /* BottomToolbarView.swift in Sources */,
+				797989842950B80E00BAC485 /* NumberDialView.swift in Sources */,
 				79FD7C1B294A6FF5005947F9 /* OrientationDetector.swift in Sources */,
 				79FD7C18294A033A005947F9 /* PhotoUI.swift in Sources */,
 				79E9EF40294B45100074133D /* PhotoEditorView.swift in Sources */,
