@@ -1,5 +1,4 @@
 import Foundation
-import class UIKit.UIImage
 
 /// Manages access to photos available for editing by the CESDK PhotoEditor
 class PhotosManager {
