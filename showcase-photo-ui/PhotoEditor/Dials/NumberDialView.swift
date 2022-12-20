@@ -28,7 +28,6 @@ struct NumberDialView: View {
       VStack {
         Spacer()
         ZStack {
-
           ScrollView(.horizontal, showsIndicators: false) {
             HStack(alignment: .center, spacing: dotSpacing) {
               let padding = (geo.size.width / 2) - (dotWidth + dotSpacing)
