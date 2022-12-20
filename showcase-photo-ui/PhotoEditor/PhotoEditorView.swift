@@ -6,14 +6,15 @@
 //
 
 import SwiftUI
+import IMGLYEngine
 
-/// Presents a list of `Photo`s from which one can be selected by the user
+/// Presents a `Photo` in the CE.SDK Canvas for editing
 struct PhotoEditorView: View {
 
+  @StateObject private var engine: Engine = Engine()
   @Environment(\.dismiss) private var dismiss
 
   private var photo: PhotosManager.Photo
-
 
   /// Initializes this `View` with the `Photo`s to be edited
   ///
@@ -24,13 +25,24 @@ struct PhotoEditorView: View {
   }
 
   public var body: some View {
-    Text(photo.id)
-      .background {
-        Color.green
-      }
-      .onTapGesture {
-        dismiss()
-      }
+    NavigationStack {
+      Canvas(engine: engine)
+        .padding(EdgeInsets(top: 0, leading: 32, bottom: 0, trailing: 32))
+        .onAppear {
+          Task {
+            try? await engine.scene.create(from: photo.url)
+          }
+        }
+        .toolbar {
+          ToolbarItemGroup {
+            Button("Revert All", action: {})
+          }
+        }
+        .ignoresSafeArea()
+        .overlay(alignment: .bottom) {
+          BottomToolbarView()
+        }
+    }
   }
 }
 
