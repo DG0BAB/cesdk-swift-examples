@@ -1,21 +1,9 @@
-//
-//  BottomToolbarView.swift
-//  Showcase-PhotoUI
-//
-//  Created by Joachim Deelen on 18.12.22.
-//
-
 import SwiftUI
-
-//protocol PlugableBarView: View { }
-//
-//extension Spacer: PlugableBarView {}
 
 struct BottomToolbarView: View {
 
   @Environment(\.dismiss) private var dismiss
   @State private var value: Int = 0
-  private var plugableFunctionBars: [any View] = [Spacer(), Spacer()]
 
   var body: some View {
     VStack(spacing: 0) {

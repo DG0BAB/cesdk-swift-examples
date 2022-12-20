@@ -1,10 +1,3 @@
-//
-//  NumberDialView.swift
-//  Showcase-PhotoUI
-//
-//  Created by Joachim Deelen on 19.12.22.
-//
-
 import SwiftUI
 
 struct NumberDialView: View {
@@ -28,6 +21,7 @@ struct NumberDialView: View {
       VStack {
         Spacer()
         ZStack {
+          
           ScrollView(.horizontal, showsIndicators: false) {
             HStack(alignment: .center, spacing: dotSpacing) {
               let padding = (geo.size.width / 2) - (dotWidth + dotSpacing)
@@ -50,12 +44,6 @@ struct NumberDialView: View {
                                              startPoint: UnitPoint(x: 0, y: 0), endPoint: UnitPoint(x: 1, y: 0))
             )
           }
-          //      .onAppear {
-          //        UIScrollView.appearance().bounces = false
-          //      }
-          //      .onDisappear {
-          //        UIScrollView.appearance().bounces = true
-          //      }
           .onPreferenceChange(ScrollViewOffsetPreferenceKey.self, perform: { value in
             currentValue = Int(value / (dotSpacing + dotWidth))
           })
@@ -78,8 +66,6 @@ private struct ScrollViewOffsetPreferenceKey: PreferenceKey {
     value += nextValue()
   }
 }
-
-
 
 struct HorizontalNumberDialView_Previews: PreviewProvider {
   static var previews: some View {

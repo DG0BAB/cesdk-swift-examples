@@ -1,10 +1,3 @@
-//
-//  OrientationDetector.swift
-//  Showcase-PhotoUI
-//
-//  Created by Joachim Deelen on 14.12.22.
-//
-
 import SwiftUI
 
 /// A `ViewModifier` for detecting orientation changes of the device
